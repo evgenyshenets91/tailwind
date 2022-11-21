@@ -1,4 +1,7 @@
 import Head from 'next/head';
+import { BsFillMoonStarsFill } from 'react-icons/bs';
+import { AiFillGithub, AiFillInstagram, AiFillFacebook } from 'react-icons/ai';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -9,7 +12,41 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={'bg-blue-100 min-h-screen'}></main>
+      <main className={'bg-blue-100'}>
+        <section className="min-h-screen p-5 md:px-10">
+          <nav className="mb-8 flex justify-between items-center">
+            <h1 className="text-xl">Developer</h1>
+            <ul className="flex items-center">
+              <li>
+                <BsFillMoonStarsFill className="cursor-pointer text-2xl" />
+              </li>
+              <li className="bg-gradient-to-r from-indigo-400 to-amber-500 text-white px-4 py-2 rounded-md ml-8 cursor-pointer">
+                Details
+              </li>
+            </ul>
+          </nav>
+          <div className="text-center p-8">
+            <h3 className="text-4xl text-teal-700">Stack</h3>
+            <p className="text-2xl py-2 text-teal-600 mb-5">
+              Next js web app with Tailwind and Typescript.
+            </p>
+            <div className="text-5xl flex justify-center gap-16 text-teal-800 py-3 mb-8">
+              <AiFillInstagram />
+              <AiFillFacebook />
+              <AiFillGithub />
+            </div>
+            <Image
+              className="mx-auto"
+              src={
+                'https://tailwindcss.com/_next/static/media/tailwindui-small@75.8bb955b2.jpg'
+              }
+              alt={''}
+              width={300}
+              height={300}
+            />
+          </div>
+        </section>
+      </main>
     </div>
   );
 }
